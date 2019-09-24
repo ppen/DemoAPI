@@ -42,10 +42,12 @@ class _ReadAllDataState extends State<ReadAllData> {
   }
 
   Widget showText(int index) {
-    return Container(//color: Colors.green,
+    return Container(
+      //color: Colors.green,
       width: MediaQuery.of(context).size.width * 0.5,
       height: MediaQuery.of(context).size.width * 0.5,
-      child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Text(
             'id = ${imageModels[index].id}',
@@ -65,9 +67,14 @@ class _ReadAllDataState extends State<ReadAllData> {
     );
   }
 
+  // Widget pleaseWait() {
+  //   return Center(
+  //     child: Text('Plesae wait'),
+  //   );
+  // }
   Widget pleaseWait() {
     return Center(
-      child: Text('Plesae wait'),
+      child: CircularProgressIndicator(),
     );
   }
 
@@ -87,11 +94,8 @@ class _ReadAllDataState extends State<ReadAllData> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Read All data'),
-      ),
-      body: imageModels.length != 0 ? showListView() : pleaseWait(),
+    return Container(
+      child: imageModels.length != 0 ? showListView() : pleaseWait(),
     );
   }
 }

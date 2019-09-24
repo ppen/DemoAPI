@@ -1,3 +1,4 @@
+import 'package:demoapi/screens/my_service.dart';
 import 'package:demoapi/screens/read_all_data.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ReadAllData()
+      home: MyService()
     );
   }
 }
